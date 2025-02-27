@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("I Am Student"),
+          backgroundColor: Colors.blueAccent,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('imagess/bertiga.jpg', width: 150),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.blue[100],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Column(
+                  children: [
+                    Text("📚 Kesuksesan adalah hasil dari kesempurnaan, kerja keras, belajar dari kegagalan, loyalitas, dan ketekunan.",
+                        style: TextStyle(fontSize: 16)),
+                    Text("🍜 Jangan pernah menyerah pada mimpimu, karena mimpi memberimu tujuan hidup.",
+                        style: TextStyle(fontSize: 16)),
+                    Text("😴 Masa depan adalah milik mereka yang percaya pada keindahan mimpi-mimpi mereka.",
+                        style: TextStyle(fontSize: 16)),
+                    Text("💰 Kegagalan adalah bumbu yang membuat kesuksesan terasa lebih nikmat.",
+                        style: TextStyle(fontSize: 16)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
