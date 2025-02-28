@@ -10,11 +10,12 @@ class MotivationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kata-kata Motivasi',
+      title: ("I Am Smart"),
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'Roboto',
       ),
+      debugShowCheckedModeBanner: false, // This line removes the debug banner
       home: const MotivationPage(),
     );
   }
@@ -48,7 +49,7 @@ class _MotivationPageState extends State<MotivationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kata-kata Motivasi'),
+        title: const Text("I Am Smart"),
         centerTitle: true,
       ),
       body: Container(
@@ -65,6 +66,38 @@ class _MotivationPageState extends State<MotivationPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Add Image widget here
+                Container(
+                  width: 200, // Adjust the width as needed
+                  height: 200, // Adjust the height as needed
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset(
+                      'Images/webcam-toy-photo355.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey,
+                          child: const Center(
+                            child: Text('Error loading image'),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 30),
                 Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
